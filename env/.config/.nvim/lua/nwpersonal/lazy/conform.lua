@@ -12,8 +12,28 @@ return {
                 json = { "prettier" },
                 yaml = { "prettier" },
                 markdown = { "prettier" },
-                php = { "phpactor" },
+                php = { "pint" },
                 vue = { "prettier" },
+            },
+            formatters = {
+                pint = {
+                    command = "pint",
+                    args = function(self, ctx)
+                        local config_file = vim.fn.expand("~/.config/pint.json")
+                        if vim.fn.filereadable(config_file) == 1 then
+                            return { "--config=" .. config_file, ctx.filename }
+                        else
+                            -- Fallback: look for pint.json in project root
+                            local project_config = vim.fn.findfile("pint.json", ".;")
+                            if project_config ~= "" then
+                                return { "--config=" .. project_config, ctx.filename }
+                            else
+                                return { ctx.filename }
+                            end
+                        end
+                    end,
+                    stdin = false,
+                }
             }
         })
     end

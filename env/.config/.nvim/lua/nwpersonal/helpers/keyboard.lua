@@ -1,9 +1,8 @@
--- Alias for function, that set new keybindings
-local map = vim.api.nvim_set_keymap
+-- Modern keybinding setter using vim.keymap.set (supports both strings and functions)
 
 -- Normal mode keybinding setter
 function nm(key, command, desc)
-    map('n', key, command, {
+    vim.keymap.set('n', key, command, {
         noremap = true,
         desc = desc
     })
@@ -11,7 +10,7 @@ end
 
 -- Input mode keybinding setter
 function im(key, command, desc)
-    map('i', key, command, {
+    vim.keymap.set('i', key, command, {
         noremap = true,
         desc = desc
     })
@@ -19,7 +18,7 @@ end
 
 -- Visual mode keybinding setter
 function vm(key, command, desc)
-    map('v', key, command, {
+    vim.keymap.set('v', key, command, {
         noremap = true,
         desc = desc
     })
@@ -27,7 +26,7 @@ end
 
 -- Terminal mode keybinding setter
 function tm(key, command, desc)
-    map('t', key, command, {
+    vim.keymap.set('t', key, command, {
         noremap = true,
         desc = desc
     })

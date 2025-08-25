@@ -1,5 +1,6 @@
 
-theme = ""
+-- theme = "tokyonight-night"
+theme = "rose-pine-main"
 
 vim.opt.guicursor = ""
 
@@ -32,7 +33,7 @@ vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
 
-vim.opt.colorcolumn = "80"
-
 vim.opt.wildmenu = true
 vim.opt.wildmode = "longest:full,full"
+
+vim.g.netrw_banner = 1

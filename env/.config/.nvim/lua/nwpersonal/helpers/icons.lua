@@ -56,5 +56,6 @@ return {
     TabClose = "󰅙",
     Terminal = "",
     Window = "",
-    WordFile = "󰈭"
+    WordFile = "󰈭",
+    Format = ""
 }
