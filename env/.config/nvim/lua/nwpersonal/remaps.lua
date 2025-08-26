@@ -27,7 +27,7 @@ nm('<Leader>fm', function()
         enable_preview = true
     }
 end, "Find themes")
-
+nm('<Leader>ft', "<cmd>PulseList<CR>", "Find timers")
 
 nm("<leader>gf", function()
     require('telescope.builtin').git_files {
