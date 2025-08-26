@@ -10,7 +10,6 @@ return {
         local icons = require("nwpersonal.helpers.icons")
 
         wk.setup({
-            -- your configuration comes here
         })
 
         -- Register group names using new spec format

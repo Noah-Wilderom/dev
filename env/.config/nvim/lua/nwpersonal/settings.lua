@@ -1,5 +1,5 @@
 -- theme = "tokyonight-night"
-theme = "rose-pine-main"
+_G.theme = "rose-pine"
 
 vim.opt.guicursor = ""
 
@@ -37,3 +37,5 @@ vim.opt.wildmode = "longest:full,full"
 vim.g.loaded_netrw = 0
 vim.g.netrw_banner = 0
 vim.g.loaded_netrwPlugin = 0
+
+vim.api.nvim_set_hl(0, "TelescopeNormal", { bg = "none" })

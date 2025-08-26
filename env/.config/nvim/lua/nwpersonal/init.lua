@@ -24,6 +24,15 @@ autocmd({"BufWritePre"}, {
     command = [[%s/\s\+$//e]],
 })
 
+autocmd('BufEnter', {
+    group = ThePrimeagenGroup,
+    callback = function()
+        -- pcall(vim.cmd.colorscheme, "rose-pine-moon")
+        vim.api.nvim_set_hl(0, "TelescopeNormal", { bg = "none" })
+        vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
+    end
+})
+
 autocmd('LspAttach', {
     group = NwPersonalGroup,
     callback = function(e)
@@ -40,3 +49,4 @@ autocmd('LspAttach', {
         vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
     end
 })
+

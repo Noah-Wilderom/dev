@@ -36,6 +36,7 @@ return {
             },
             view = {
                 cursorline = false,
+                
                 float = {
                     enable = true,
                     open_win_config = open_win_config_func
