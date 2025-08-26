@@ -19,6 +19,7 @@ return {
 			{ "<leader>g", group = icons.Git .. " Git" },
 			{ "<leader>t", group = icons.Terminal .. " Terminal" },
 			{ "<leader>l", group = icons.Format .. " Format" },
+			{ "<leader>h", group = icons.Search .. " Harpoon" },
 		})
 	end
 }
