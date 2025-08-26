@@ -50,6 +50,5 @@ return {
             on_did_open = function()
             end
         })
-
     end
 }
