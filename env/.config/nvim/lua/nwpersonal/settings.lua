@@ -1,4 +1,3 @@
-
 -- theme = "tokyonight-night"
 theme = "rose-pine-main"
 
@@ -15,7 +14,6 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
 vim.opt.smartindent = true
-
 
 vim.opt.swapfile = false
 vim.opt.backup = false
@@ -36,4 +34,6 @@ vim.opt.updatetime = 50
 vim.opt.wildmenu = true
 vim.opt.wildmode = "longest:full,full"
 
-vim.g.netrw_banner = 1
+vim.g.loaded_netrw = 0
+vim.g.netrw_banner = 0
+vim.g.loaded_netrwPlugin = 0

@@ -62,7 +62,10 @@ nm("<Leader>/", function()
     require("Comment.api").toggle.linewise.current()
 end, "Toggle comment line")
 
-nm("<Leader>/", "<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>", "Toggle comment for selection")
+nm("<Leader>/", "<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>",
+    "Toggle comment for selection")
 
 -- File Explorer
-nm("<leader>ee", "<cmd>Lexplore<CR>", "Toggle Netrw file explorer")
+-- nm("<leader>ee", "<cmd>Lexplore<CR>", "Toggle Netrw file explorer")
+nm("<leader>ee", "<cmd>NvimTreeToggle<CR>", "Toggle NvimTree file explorer")
+nm("<leader>ef", "<cmd>NvimTreeFocus<CR>", "Focus NvimTree file explorer")
