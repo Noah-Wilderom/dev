@@ -28,8 +28,6 @@ autocmd('BufEnter', {
     group = ThePrimeagenGroup,
     callback = function()
         -- pcall(vim.cmd.colorscheme, "rose-pine-moon")
-        vim.api.nvim_set_hl(0, "TelescopeNormal", { bg = "none" })
-        vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
     end
 })
 

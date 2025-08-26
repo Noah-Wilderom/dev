@@ -69,3 +69,16 @@ nm("<Leader>/", "<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.vis
 -- nm("<leader>ee", "<cmd>Lexplore<CR>", "Toggle Netrw file explorer")
 nm("<leader>ee", "<cmd>NvimTreeToggle<CR>", "Toggle NvimTree file explorer")
 nm("<leader>ef", "<cmd>NvimTreeFocus<CR>", "Focus NvimTree file explorer")
+
+nm("<leader>lf", function()
+    local conform = require("conform")
+    local notify = require("notify")
+    conform.format({ async = true }, function(err, did_edit)
+        if err then
+            notify(err, "error")
+        elseif did_edit then
+            notify("File formatted", "info")
+        end
+    end)
+end, "Format File")
+
