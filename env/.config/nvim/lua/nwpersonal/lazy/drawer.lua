@@ -26,15 +26,21 @@ return {
                 -- <leader>tz: zoom the terminal.
                 vim.keymap.set('n', '<leader>nn', function()
                     event.instance.focus_or_toggle()
-                end)
+                end, {
+                    desc = "Toggle notes drawer"
+                })
                 vim.keymap.set('t', '<leader>nn', function()
                     event.instance.focus_or_toggle()
-                end)
+                end, {
+                    desc = "Toggle notes drawer"
+                })
                 vim.keymap.set('n', '<leader>nc', function()
                     event.instance.open({
                         mode = 'new'
                     })
-                end)
+                end, {
+                    desc = "Open new notes drawer"
+                })
             end,
 
             -- When a new buffer is created, switch it to a terminal.
