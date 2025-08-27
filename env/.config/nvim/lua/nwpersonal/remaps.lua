@@ -95,4 +95,6 @@ end, "Format File")
 if isMacOS then
 	nm("<D-s>", ":w<CR>", "Save file (Cmd+S)")
 	im("<D-s>", "<Esc>:w<CR>", "Save file (Cmd+S) from insert mode")
+	nm("s", "", "Save file (Cmd+S) from insert mode")
 end
+
