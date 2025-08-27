@@ -2,6 +2,8 @@ require("nwpersonal.helpers.keyboard")
 
 vim.g.mapleader = " "
 
+local isMacOS = vim.loop.os_uname().sysname == "Darwin"
+
 nm("<leader>w", ":w<CR>", "Save file")
 
 nm("<leader>ff", function()
@@ -23,6 +25,9 @@ nm("<Leader>fh", function()
 	require("telescope.builtin").oldfiles({
 		hidden = true,
 	})
+end, "Find history")
+nm("<Leader>fg", function()
+	require("telescope.builtin").live_grep()
 end, "Find history")
 nm("<Leader>fm", function()
 	require("telescope.builtin").colorscheme({
@@ -87,3 +92,7 @@ nm("<leader>lf", function()
 	end)
 end, "Format File")
 
+if isMacOS then
+	nm("<D-s>", ":w<CR>", "Save file (Cmd+S)")
+	im("<D-s>", "<Esc>:w<CR>", "Save file (Cmd+S) from insert mode")
+end

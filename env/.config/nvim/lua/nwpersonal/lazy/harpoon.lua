@@ -10,6 +10,7 @@ return {
                 sync_on_ui_close = false,
             },
         }
+
         -- basic telescope configuration
         local conf = require("telescope.config").values
         local function toggle_telescope(harpoon_files)
