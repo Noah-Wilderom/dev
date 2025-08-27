@@ -8,7 +8,7 @@ local NwPersonalGroup = augroup("NwPersonal", {})
 local autocmd = vim.api.nvim_create_autocmd
 
 function R(name)
-    require("plentary.reload").reload_module(name)
+    require("plenary.reload").reload_module(name)
 end
 
 vim.filetype.add({
@@ -17,7 +17,6 @@ vim.filetype.add({
     }
 })
 
-
 autocmd({"BufWritePre"}, {
     group = NwPersonalGroup,
     pattern = "*",
@@ -25,7 +24,7 @@ autocmd({"BufWritePre"}, {
 })
 
 autocmd('BufEnter', {
-    group = ThePrimeagenGroup,
+    group = NwPersonalGroup,
     callback = function()
         -- pcall(vim.cmd.colorscheme, "rose-pine-moon")
     end
