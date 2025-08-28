@@ -36,14 +36,14 @@ return {
             },
             view = {
                 cursorline = false,
-                
+
                 float = {
                     enable = true,
                     open_win_config = open_win_config_func
                 }
             },
             filters = {
-                dotfiles = true
+                dotfiles = false
             },
             renderer = {
                 indent_width = 3,
