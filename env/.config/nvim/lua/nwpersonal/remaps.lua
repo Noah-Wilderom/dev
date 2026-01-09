@@ -98,3 +98,14 @@ if isMacOS then
 	nm("s", "", "Save file (Cmd+S) from insert mode")
 end
 
+-- todo config
+
+nm("<leader>fo", "<cmd>TodoTelescope<CR>", "Find TODO")
+nm("]t", function()
+    require("todo-comments").jump_next()
+end, "Next todo comment")
+
+nm("[t", function()
+  require("todo-comments").jump_prev()
+end, "Previous todo comment")
+

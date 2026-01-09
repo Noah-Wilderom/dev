@@ -45,7 +45,7 @@ return {
                 "lua_ls",
                 "gopls",
                 "tailwindcss",
-                "phpactor",
+                "intelephense",
             },
             handlers = {
                 function(server_name) -- default handler (optional)
@@ -69,6 +69,25 @@ return {
                     vim.g.zig_fmt_parse_errors = 0
                     vim.g.zig_fmt_autosave = 0
 
+                    do
+                      local lsp_util = require("vim.lsp.util")
+
+                      local old_uri_to_fname = lsp_util.uri_to_fname
+                      lsp_util.uri_to_fname = function(uri, ...)
+                        if uri:match("^phar://") then
+                          uri = uri:gsub("^phar://", "")
+                        end
+                        return old_uri_to_fname(uri, ...)
+                      end
+
+                      local old_uri_to_bufnr = lsp_util.uri_to_bufnr
+                      lsp_util.uri_to_bufnr = function(uri, ...)
+                        if uri:match("^phar://") then
+                          uri = uri:gsub("^phar://", "")
+                        end
+                        return old_uri_to_bufnr(uri, ...)
+                      end
+                    end
                 end,
                 ["lua_ls"] = function()
                     local lspconfig = require("lspconfig")

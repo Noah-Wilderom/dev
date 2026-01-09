@@ -14,6 +14,7 @@ return {
                 markdown = { "prettier" },
                 php = { "pint" },
                 vue = { "prettier" },
+                rust = { "rustfmt" },
             },
             formatters = {
                 pint = {
